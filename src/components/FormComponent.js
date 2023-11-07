@@ -76,7 +76,8 @@ const FormComponent = () => {
 
   return (
     <div className="container">
-      <form className="row g-3" onSubmit={handleSubmit}>
+<h2 id='order' className='mb-4'  style={{ textAlign: 'center', textDecoration: 'underline', color: '#ffffff', fontFamily: 'Montserrat' }}> Place your order </h2>
+       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <label htmlFor="firstName" className="form-label" style={{ color: 'white' }}>
             First Name

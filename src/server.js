@@ -1,13 +1,15 @@
+require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dbURL = process.env.DB_URL;
 
 const app = express();
 const port = 3001;
 
 // Connect to MongoDB (make sure your MongoDB server is running)
-mongoose.connect('mongodb://127.0.0.1:27017/sarvDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('error', (error) => console.error('MongoDB connection error:', error));
 mongoose.connection.once('open', () => {
   console.log('Connected to MongoDB');
